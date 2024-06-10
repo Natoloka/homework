@@ -1,0 +1,25 @@
+{
+  "name": "homework",
+  "version": "1.0.0",
+  "description": "pecode homework",
+  "main": "index.js",
+  "scripts": {
+    "firefox": "npx playwright test ./tests/loginTest.test.ts --project=firefox",
+    "firefoxw": "ts-node -r tsconfig-paths/register -r dotenv/config src/tests/loginTest.test.ts --project=firefox",
+    "chrome": "npx playwright test ./tests/loginTest.test.ts --project=chromium",
+    "all": "npx playwright test ./tests/loginTest.test.ts",
+    "desktopBrowsers": "npm run chrome && npm run firefox",
+    "showReport": "npx playwright show-report"
+  },
+  "author": "onatoloka",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.44.1",
+    "dotenv": "^16.4.5"
+  },
+  "dependencies": {
+    "playwright": "^1.44.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
