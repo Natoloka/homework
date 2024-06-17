@@ -3,9 +3,10 @@ import 'dotenv/config';
 import { BasePage } from '../pages/BasePage';
 import { LoginPage } from '../pages/LoginPage';
 
-test('test', async ({ page }) => {
+test('Success login', async ({ page }) => {
   const loginPage = new LoginPage(page);
   await loginPage.navigate(process.env.BASE_URL!);
+  await loginPage.checkElementsPresent();
   await loginPage.loginWith(process.env.USERNAME!, process.env.PASSWORD!);
 });
 
